@@ -50,6 +50,7 @@ customSounds.forEach((soundObj) => {
 });
 
 window.addEventListener("keydown", (event) => {
+    
   const keyPressed = event.key.toLowerCase();
   const isSoundFound = customSounds.find(
     (sound) => sound.hotKey === keyPressed
