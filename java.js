@@ -2,26 +2,32 @@ const soundFolder = "memeSounds";
 const customSounds = [
   {
     fileName: "bombastic-side-eye.mp3",
+    displayName: "Bombastic Side Eye",
     hotKey: "q",
   },
   {
     fileName: "movie_1.mp3",
+    displayName: "Bruh",
     hotKey: "w",
   },
   {
     fileName: "daddyy-chill.mp3",
+    displayName: "chill",
     hotKey: "e",
   },
   {
     fileName: "its-me-mario.mp3",
+    displayName: "Mario",
     hotKey: "a",
   },
   {
     fileName: "suprise-motherf-er.mp3",
+    displayName: "Surpise m",
     hotKey: "r",
   },
   {
     fileName: "anime-wow-sound-effect.mp3",
+    displayName: "wow",
     hotKey: "s",
   },
 ];
@@ -30,7 +36,7 @@ const soundEffectsEl = document.getElementById("soundEffects");
 
 const createSoundEffect = (audioSrc) => {
   const buttonEl = document.createElement("button");
-  buttonEl.textContent = audioSrc.fileName;
+  buttonEl.textContent = audioSrc.displayName;
   buttonEl.className = "custom-button";
 
   const audioEl = document.createElement("audio");
@@ -67,8 +73,5 @@ window.addEventListener("keyup", (event) => {
     (sound) => sound.hotKey === keyPressed
   );
 
-  if (isSoundFound) {
-    isSoundFound.audioEl.pause();
-    isSoundFound.audioEl.currentTime = 0;
-  }
+
 });
